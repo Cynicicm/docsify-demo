@@ -818,3 +818,23 @@ public class AnnotationPointCut {
 3. 编写接口
 4. 编写Mapper.xml
 5. 测试
+
+
+
+参考spring整合mybatis的中文官网：http://mybatis.org/spring/zh/
+
+## 12、声明式事务
+
+### 1、回顾事务
+
+- 把一组业务当成一个业务来做，要么都成功，要么都失败！
+- 事务在项目开发中，十分的重要，设计到数据的一致性和完整性的问题，不能马虎！
+
+
+
+事务ACID原则
+
+- 原子性（Atomicity）
+- 一致性（Consistency）
+- 隔离性（Isolation）
+- 持久性（Durability）
