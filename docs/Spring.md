@@ -36,7 +36,7 @@
 
 ### 1.3、组成
 
-![img](https://images2017.cnblogs.com/blog/1219227/201709/1219227-20170930225010356-45057485.gif)
+![img](Spring_images/1219227-20170930225010356-45057485.gif)
 
 ### 1.4、扩展
 
@@ -104,7 +104,7 @@
 
 **控制反转是一种通过描述（XML或注解）并通过第三方去生产或获取特定对象的方式。在Spring中实现控制反转的是Ioc容器，其实现方法是依赖注入（Dependency Injection，DI）。**
 
-![container magic](https://docs.spring.io/spring-framework/docs/current/reference/html/images/container-magic.png)
+![container magic](Spring_images/container-magic.png)
 
 ## 3、IOC创建对象的方式
 
@@ -272,7 +272,7 @@ name ：也是别名，可以取多个
 </beans>
 ```
 
-![image-20201115101336451](C:\Users\wenjie\AppData\Roaming\Typora\typora-user-images\image-20201115101336451.png)
+![image-20201115101336451](Spring_images/image-20201115101336451.png)
 
 
 
@@ -285,11 +285,11 @@ xmlns:c="http://www.springframework.org/schema/c"
 
 ### 5.4、bean的作用域
 
-![image-20201115102052122](C:\Users\wenjie\AppData\Roaming\Typora\typora-user-images\image-20201115102052122.png)
+![image-20201115102052122](Spring_images/image-20201115102052122.png)
 
 1.单例模式（Spring默认机制）
 
-![image-20201115102122489](C:\Users\wenjie\AppData\Roaming\Typora\typora-user-images\image-20201115102122489.png)
+![image-20201115102122489](Spring_images/image-20201115102122489.png)
 
 ```xml
 <bean id="accountService" class="com.something.DefaultAccountService"/>
@@ -304,7 +304,7 @@ xmlns:c="http://www.springframework.org/schema/c"
 
 每次从容器中get的时候，都会产生一个新的对象
 
-![image-20201115102211622](C:\Users\wenjie\AppData\Roaming\Typora\typora-user-images\image-20201115102211622.png)
+![image-20201115102211622](Spring_images/image-20201115102211622.png)
 
 ```xml
 <bean id="accountService" class="com.something.DefaultAccountService" scope="prototype"/>
@@ -459,7 +459,7 @@ public class MovieRecommender {
 
 在Spring4之后，要使用注解开发，必须要保证aop的包导入了
 
-![image-20201115143651732](C:\Users\wenjie\AppData\Roaming\Typora\typora-user-images\image-20201115143651732.png)
+![image-20201115143651732](Spring_images/image-20201115143651732.png)
 
 使用注解需要导入context约束，增加注解的支持。
 
@@ -574,7 +574,7 @@ public static void main(String[] args) {
 - 静态代理
 - 动态代理
 
-![img](https://pic3.zhimg.com/80/v2-6f99360762e356f28fea3a4cb69d9406_720w.png)
+![img](Spring_images/v2-6f99360762e356f28fea3a4cb69d9406_720w.png)
 
 ### 9.1、静态代理
 
@@ -612,7 +612,7 @@ public static void main(String[] args) {
 
 聊聊AOP
 
-![image-20201116103843082](C:\Users\wenjie\AppData\Roaming\Typora\typora-user-images\image-20201116103843082.png)
+![image-20201116103843082](Spring_images/image-20201116103843082.png)
 
 ### 9.3、动态代理
 
@@ -640,7 +640,7 @@ public static void main(String[] args) {
 
 AOP（Aspect Oriented Programming）意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续，是软件开发的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生泛型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。
 
-![image-20201116204803708](C:\Users\wenjie\AppData\Roaming\Typora\typora-user-images\image-20201116204803708.png)
+![image-20201116204803708](Spring_images/image-20201116204803708.png)
 
 ### 10.2、AOP在Spring中的作用
 
@@ -654,11 +654,11 @@ AOP（Aspect Oriented Programming）意为：面向切面编程，通过预编�
 - 切入点（PointCut）：切面通知执行的“地点”的定义。
 - 连接点（JointPoint）：与切入点匹配的执行点。
 
-![image-20201116215108652](C:\Users\wenjie\AppData\Roaming\Typora\typora-user-images\image-20201116215108652.png)
+![image-20201116215108652](Spring_images/image-20201116215108652.png)
 
 Spring AOP中，通过Advice定义横切逻辑，Spring中支持五种类型的Advice
 
-![image-20201116215205787](C:\Users\wenjie\AppData\Roaming\Typora\typora-user-images\image-20201116215205787.png)
+![image-20201116215205787](Spring_images/image-20201116215205787.png)
 
 即AOP在不改变原有代码的情况下，去增加新的功能。
 
