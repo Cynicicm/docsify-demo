@@ -154,8 +154,57 @@ Dao层、Service层、Controller层。。。
 
 **常见错误：**
 
-![image-20201121200338425](Mybatis_images/image-20201121200338425.png)
+​	maven由于他的约束大于配置，我们之后可能遇到我们写的配置文件，无法被导出或者生效的问题，解决方案：
+
+```xml
+<!--在build中配置resources，来防止我们资源导出失败的问题-->
+<build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+```
+
+
 
 - 实体类
 - Dao接口
 
+- 测试
+
+  ```java
+  public class MyTest {
+  
+      @Test
+      public void test() {
+          // 第一步：获得sqlSession对象
+          SqlSession sqlSession = MybatisUtil.getSqlSession();
+          // 执行sql
+          UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+          List<User> list = userMapper.getUserList();
+          for (User user : list) {
+              System.out.println(user.toString());
+          }
+  
+          // 关闭sqlSession
+          sqlSession.close();
+      }
+  }
+  ```
+
+  
