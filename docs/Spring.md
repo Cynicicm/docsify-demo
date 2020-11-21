@@ -642,6 +642,14 @@ AOP（Aspect Oriented Programming）意为：面向切面编程，通过预编�
 
 ![image-20201116204803708](Spring_images/image-20201116204803708.png)
 
+简单地去理解，其实AOP要做三类事：
+
+- 在哪里切入，也就是权限校验等非业务操作在哪些业务代码中执行。
+- 在什么时候切入，是业务代码执行前还是执行后。
+- 切入后做什么事，比如做权限校验、日志记录等。
+
+
+
 ### 10.2、AOP在Spring中的作用
 
 提供声明式事务：允许用户自定义切面
@@ -655,6 +663,14 @@ AOP（Aspect Oriented Programming）意为：面向切面编程，通过预编�
 - 连接点（JointPoint）：与切入点匹配的执行点。
 
 ![image-20201116215108652](Spring_images/image-20201116215108652.png)
+
+![20201016194259600](Spring_images/20201016194259600.png)
+
+<img src="Spring_images/20201016201545227.png" alt="20201016201545227" style="zoom:67%;" />
+
+**可参考的优秀博客：**https://blog.csdn.net/mu_wind/article/details/102758005
+
+
 
 Spring AOP中，通过Advice定义横切逻辑，Spring中支持五种类型的Advice
 
@@ -838,3 +854,20 @@ public class AnnotationPointCut {
 - 一致性（Consistency）
 - 隔离性（Isolation）
 - 持久性（Durability）
+
+
+
+### 2、Spring中的事务管理
+
+- 声明式事务：AOP
+- 编程式事务：需要在代码中，进行事务的管理
+
+
+
+思考：
+
+为什么需要事务？
+
+- 如果不配置事务，可能存在数据提交不一致的情况；
+- 如果我们不在Spring中去配置声明式事务，我们就需要在代码中手动配置事务！
+- 事务在我们项目的开发中十分重要，涉及到数据的一致性和完整性问题，不容马虎！
